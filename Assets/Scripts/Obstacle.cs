@@ -12,14 +12,11 @@ public class Obstacle : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-
-        Vector3 spawnPos = mainCamera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height / 2));
-        transform.position = new Vector3(spawnPos.x, spawnPos.y);
+        rb.velocity = Vector2.left * speed;
     }
 
     void Update()
     {
-        //rb.AddForce(Vector2.left * speed);
-        rb.velocity = Vector2.left * speed;
+        
     }
 }
