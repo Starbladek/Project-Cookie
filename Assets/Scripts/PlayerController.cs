@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Death Entity"))
         {
+            GameObject.FindGameObjectWithTag("GameMaster").GetComponent<AudioSource>().mute = true;
             audioSource.clip = aah;
             gameOver = true;
             Instantiate(gameOverScreen);
