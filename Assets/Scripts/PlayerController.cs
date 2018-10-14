@@ -11,11 +11,13 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed;
     Rigidbody2D rb;
     SpriteRenderer sr;
-    
+    Camera mainCamera;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
     void Update()
@@ -24,6 +26,16 @@ public class PlayerController : MonoBehaviour
         float moveVertical = Input.GetAxisRaw("Vertical");
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         rb.velocity = movement * maxSpeed;
+
+        if (transform.position.x > mainCamera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)).x - (sr.bounds.size.x * 0.5f))
+            transform.position = new Vector2(mainCamera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)).x - (sr.bounds.size.x * 0.5f), transform.position.y);
+        //if (transform.position.x > Screen.width)
+        //transform.position = new Vector2(Screen.width, transform.position.y);
+
+        if (transform.position.y > 2.5f)
+            transform.position = new Vector2(transform.position.x, 2.5f);
+        if (transform.position.y < -4f)
+            transform.position = new Vector2(transform.position.x, -4f);
 
         if (gameOver)
         {
