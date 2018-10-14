@@ -661,7 +661,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: INSERT GAME NAME HERE
+  m_Text: Project Cookie
 --- !u!222 &1597208436
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -736,7 +736,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Level One '
+  m_Text: Play
 --- !u!222 &1736116840
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 1803854403}
   - component: {fileID: 1803854402}
   m_Layer: 0
-  m_Name: Level_One
+  m_Name: Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
