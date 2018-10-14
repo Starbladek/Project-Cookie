@@ -20,34 +20,30 @@ public class DynamicSpeech : MonoBehaviour
 
         SpeechBubble = (GameObject)Instantiate(SpeechPrefab, transform.position, transform.rotation);
         SpeechBubble.transform.position += new Vector3(0.25f, 0, 0);
-        currentstring = "not place holder";
         SpeechBubble.GetComponentInChildren<Text>().text = currentstring;
-
         Speech(enemyTalk.dialogue);
-         
 
     }
 
     public void Speech(string[] inQueueText)
     {
-        currentstring = " ";
         StartCoroutine(OneCharectorAtATime(inQueueText));
     }
 
     IEnumerator OneCharectorAtATime(string[] inQueueText)
     {
-
         for (int i = 0; i < inQueueText.Length; i++)
         {
+            currentstring = " ";
             for (int j = 0; j <= inQueueText[i].Length; j++)
             {
                 currentstring = inQueueText[i].Substring(0, j);
-                print(currentstring);
+                //print(currentstring);
                 SpeechBubble.GetComponentInChildren<Text>().text = currentstring;
                 yield return new WaitForSeconds(speech_delay);
             }
             //wait for a second before starting over
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(3f);
         }
         Destroy(SpeechBubble);
     }
