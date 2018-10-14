@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class DeskObstacle : MonoBehaviour
 {
     public float speed = 5f;
     Rigidbody2D rb;

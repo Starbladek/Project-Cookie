@@ -8,15 +8,20 @@ public class PlayerController : MonoBehaviour
     public Canvas gameOverScreen;
     bool gameOver;
 
+    public float acceleration;
     public float maxSpeed;
+    public float basketballKnockbackAmount;
+
     Rigidbody2D rb;
     SpriteRenderer sr;
     Camera mainCamera;
+    AudioSource oof;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        oof = GetComponent<AudioSource>();
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
@@ -25,12 +30,10 @@ public class PlayerController : MonoBehaviour
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-        rb.velocity = movement * maxSpeed;
+        rb.AddForce(movement * acceleration);
 
         if (transform.position.x > mainCamera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)).x - (sr.bounds.size.x * 0.5f))
             transform.position = new Vector2(mainCamera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)).x - (sr.bounds.size.x * 0.5f), transform.position.y);
-        //if (transform.position.x > Screen.width)
-        //transform.position = new Vector2(Screen.width, transform.position.y);
 
         if (transform.position.y > 2.5f)
             transform.position = new Vector2(transform.position.x, 2.5f);
@@ -51,11 +54,22 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        oof.Play();
+        
         if (other.gameObject.CompareTag("Death Entity"))
         {
             gameOver = true;
             Instantiate(gameOverScreen);
             Time.timeScale = 0;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Basketball"))
+        {
+            rb.AddForce(new Vector2(-basketballKnockbackAmount, 0));
+            other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-other.gameObject.GetComponent<Rigidbody2D>().velocity.x, 10f);
         }
     }
 }

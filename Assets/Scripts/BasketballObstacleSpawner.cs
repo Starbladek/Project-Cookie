@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleSpawner : MonoBehaviour
+public class BasketballObstacleSpawner : MonoBehaviour
 {
-    public Obstacle[] obstacles;
+    public BasketballObstacle basketball;
     public float spawnTimerLengthMin;
     public float spawnTimerLengthMax;
     float spawnTimerLength;
@@ -25,9 +25,10 @@ public class ObstacleSpawner : MonoBehaviour
         {
             spawnTimerLength = Random.Range(spawnTimerLengthMin, spawnTimerLengthMax);
             spawnTimer = spawnTimerLength;
-            Vector3 spawnPos = mainCamera.ScreenToWorldPoint(new Vector2(Screen.width + 10f, Random.Range(Screen.height * 0.25f, Screen.height * 0.6f)));
+            float yPos = (Random.Range(0, 2) == 1) ? -2.5f : -4f;
+            Vector3 spawnPos = new Vector2(mainCamera.ScreenToWorldPoint(new Vector2(Screen.width + 10f, 0)).x, yPos);
             spawnPos.z = 0;
-            Instantiate(obstacles[0].gameObject, spawnPos, Quaternion.identity);
+            Instantiate(basketball.gameObject, spawnPos, Quaternion.identity);
         }
     }
 }
