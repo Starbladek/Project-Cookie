@@ -196,6 +196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 447841920}
+  - component: {fileID: 447841921}
   - component: {fileID: 447841918}
   - component: {fileID: 447841917}
   - component: {fileID: 447841919}
@@ -308,6 +309,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &447841921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 447841916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd80a7e9fe0e63d409170efd1d6274c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yells:
+  - {fileID: 8300000, guid: 6f241c247fd2c4b4698527a04f017eab, type: 3}
+  - {fileID: 8300000, guid: 00c193c61bb4ad247882d44fa0f5c0f3, type: 3}
+  - {fileID: 8300000, guid: 8a02e2e48ac603c4ebb1a845f428eeed, type: 3}
+  - {fileID: 8300000, guid: 45b02fc0035b4794c89e385c4c8ca4b4, type: 3}
+  - {fileID: 8300000, guid: 671afcd475e6c8b43949f0fadfbb4bb3, type: 3}
+  - {fileID: 8300000, guid: 00769f39bb9ba0b4eb26edbbd6338ffd, type: 3}
+  - {fileID: 8300000, guid: 0fa3d55fbf4240546b618eb028169b53, type: 3}
+  nextTalkTimerMin: 2
+  nextTalkTimerMax: 4
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +484,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.40587068, y: -1.086024}
+  m_Offset: {x: -0.40587068, y: -0.7708752}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -473,7 +495,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.7359672, y: 0.86945367}
+  m_Size: {x: 2.7359672, y: 1.4997513}
   m_EdgeRadius: 0
 --- !u!50 &672570378
 Rigidbody2D:
@@ -556,7 +578,7 @@ MonoBehaviour:
     type: 2}
   acceleration: 15
   maxSpeed: 5
-  basketballKnockbackAmount: 1000
+  basketballKnockbackAmount: 1500
   oof: {fileID: 8300000, guid: 280bc07b3020368438510034e323f6e7, type: 3}
   aah: {fileID: 8300000, guid: 5233b672005897b4c9f59f4172a063a7, type: 3}
 --- !u!4 &672570381
