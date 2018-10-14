@@ -25,7 +25,7 @@ public class BasketballObstacleSpawner : MonoBehaviour
         {
             spawnTimerLength = Random.Range(spawnTimerLengthMin, spawnTimerLengthMax);
             spawnTimer = spawnTimerLength;
-            float yPos = (Random.Range(0, 2) == 1) ? -2.5f : -4f;
+            float yPos = (Random.Range(0, 2) == 1) ? 2f : -4f;
             Vector3 spawnPos = new Vector2(mainCamera.ScreenToWorldPoint(new Vector2(Screen.width + 10f, 0)).x, yPos);
             spawnPos.z = 0;
             Instantiate(basketball.gameObject, spawnPos, Quaternion.identity);

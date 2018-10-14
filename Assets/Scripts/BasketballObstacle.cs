@@ -15,7 +15,6 @@ public class BasketballObstacle : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        transform.position = new Vector2(mainCamera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height/2)).x, 0);
         rb.velocity = new Vector2(-launchSpeed, 5f);
     }
 

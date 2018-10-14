@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 447841920}
   - component: {fileID: 447841918}
   - component: {fileID: 447841917}
+  - component: {fileID: 447841919}
   m_Layer: 0
   m_Name: Superintendent
   m_TagString: Death Entity
@@ -276,6 +277,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &447841919
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 447841916}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8dea0f51899f17d4fb9f267f1af549af, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &447841920
 Transform:
   m_ObjectHideFlags: 0
@@ -537,7 +556,9 @@ MonoBehaviour:
     type: 2}
   acceleration: 60
   maxSpeed: 5
-  basketballKnockbackAmount: 2500
+  basketballKnockbackAmount: 3000
+  oof: {fileID: 8300000, guid: 280bc07b3020368438510034e323f6e7, type: 3}
+  aah: {fileID: 8300000, guid: 5233b672005897b4c9f59f4172a063a7, type: 3}
 --- !u!4 &672570381
 Transform:
   m_ObjectHideFlags: 0
@@ -578,7 +599,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 280bc07b3020368438510034e323f6e7, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -816,7 +837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basketball: {fileID: 114198777881899100, guid: dc1641056ca69b243851d06c82f39891,
     type: 2}
-  spawnTimerLengthMin: 4
+  spawnTimerLengthMin: 3
   spawnTimerLengthMax: 6
 --- !u!4 &1583282800
 Transform:

@@ -15,13 +15,15 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer sr;
     Camera mainCamera;
-    AudioSource oof;
+    AudioSource audioSource;
+    public AudioClip oof;
+    public AudioClip aah;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        oof = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
@@ -54,14 +56,17 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        oof.Play();
-        
+        audioSource.clip = oof;
+
         if (other.gameObject.CompareTag("Death Entity"))
         {
+            audioSource.clip = aah;
             gameOver = true;
             Instantiate(gameOverScreen);
             Time.timeScale = 0;
         }
+
+        audioSource.Play();
     }
 
     void OnTriggerEnter2D(Collider2D other)
