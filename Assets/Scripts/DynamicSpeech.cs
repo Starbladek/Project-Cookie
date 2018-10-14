@@ -17,37 +17,36 @@ public class DynamicSpeech : MonoBehaviour
 
     public void Start()
     {
-
-        SpeechBubble = (GameObject)Instantiate(SpeechPrefab, transform.position, transform.rotation);
-        SpeechBubble.transform.position += new Vector3(0.25f, 0, 0);
-        SpeechBubble.GetComponentInChildren<Text>().text = currentstring;
         Speech(enemyTalk.dialogue);
-
     }
 
     public void Speech(string[] inQueueText)
     {
+        int randomMessage = Random.Range(0, inQueueText.Length);
         StartCoroutine(OneCharectorAtATime(inQueueText));
     }
 
     IEnumerator OneCharectorAtATime(string[] inQueueText)
     {
-        for (int i = 0; i < inQueueText.Length; i++)
+        while (true)
         {
-            currentstring = " ";
-            for (int j = 0; j <= inQueueText[i].Length; j++)
+            int randomnumber = Random.Range(0, inQueueText.Length);
+            float randomTime = Random.Range(5f, 15f);
+            SpeechBubble = (GameObject)Instantiate(SpeechPrefab, transform.position, transform.rotation);
+            SpeechBubble.GetComponentInChildren<Text>().text = " ";
+            for (int j = 0; j <= inQueueText[randomnumber].Length; j++)
             {
-                currentstring = inQueueText[i].Substring(0, j);
-                //print(currentstring);
+                currentstring = inQueueText[randomnumber].Substring(0, j);
                 SpeechBubble.GetComponentInChildren<Text>().text = currentstring;
                 yield return new WaitForSeconds(speech_delay);
             }
             //wait for a second before starting over
             yield return new WaitForSeconds(3f);
+            Destroy(SpeechBubble);
+            currentstring = " ";
+            yield return new WaitForSeconds(randomTime);
         }
-        Destroy(SpeechBubble);
     }
-
 }
 
 [System.Serializable]
