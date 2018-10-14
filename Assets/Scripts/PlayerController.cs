@@ -51,6 +51,11 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
+        }
+
         sr.sortingOrder = (int)-transform.position.y;
     }
 

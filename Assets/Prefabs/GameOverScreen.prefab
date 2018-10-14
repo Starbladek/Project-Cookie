@@ -122,7 +122,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Gotcha!
+  m_Text: 'Gotcha!
+
+    (Press R to restart)'
 --- !u!114 &114663594612428738
 MonoBehaviour:
   m_ObjectHideFlags: 1

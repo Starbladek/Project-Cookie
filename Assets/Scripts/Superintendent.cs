@@ -13,6 +13,7 @@ public class Superintendent : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         nextTalkTimer = Random.Range(nextTalkTimerMin, nextTalkTimerMax);
     }
 
@@ -22,7 +23,7 @@ public class Superintendent : MonoBehaviour
         if (nextTalkTimer <= 0)
         {
             nextTalkTimer = Random.Range(nextTalkTimerMin, nextTalkTimerMax);
-            audioSource.clip = yells[Random.Range(0, yells.Length - 1)];
+            audioSource.clip = yells[Random.Range(0, yells.Length)];
             audioSource.Play();
         }
     }
