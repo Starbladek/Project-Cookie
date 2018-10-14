@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 447841918}
   - component: {fileID: 447841917}
   - component: {fileID: 447841919}
+  - component: {fileID: 447841921}
   m_Layer: 0
   m_Name: Superintendent
   m_TagString: Death Entity
@@ -317,6 +318,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 447841916}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: cd80a7e9fe0e63d409170efd1d6274c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -330,6 +332,20 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0fa3d55fbf4240546b618eb028169b53, type: 3}
   nextTalkTimerMin: 2
   nextTalkTimerMax: 4
+=======
+  m_Script: {fileID: 11500000, guid: 6fee4a76ad32e0640bb2ed2fd2656543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTalk:
+    dialogue:
+    - FUCK YOU KID
+    - I  HAVE WEED
+    - I HAVE CANDY
+    - GIVE ME MY POT
+    - U VAPE BRO?
+  SpeechPrefab: {fileID: 1542063937899308, guid: 239072dc19564bc4da9e5ece9985cfb9,
+    type: 2}
+>>>>>>> ff43f4d2e38b073566e09ebfc9b8358613067455
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
