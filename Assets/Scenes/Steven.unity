@@ -143,7 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed7dfc6ce92a0864188a685766498420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  backgrounds: []
+  scrollSpeed: 0
 --- !u!65 &205505549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -211,6 +212,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &794627223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1109686321062038, guid: 75065e7468a66564ba3f4943d1658c05,
+    type: 2}
+  m_PrefabInternal: {fileID: 1206642049}
+--- !u!114 &794627229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 794627223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d8956e8157221345907050c99835e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTalk:
+    dialogue:
+    - Fuck YOU KID
+    - middlefinger
+    - hahahaa
+    - DWDWADWA
+  SpeechPrefab: {fileID: 1542063937899308, guid: 239072dc19564bc4da9e5ece9985cfb9,
+    type: 2}
 --- !u!1001 &1206642049
 Prefab:
   m_ObjectHideFlags: 0
@@ -220,11 +245,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4328333242247378, guid: 75065e7468a66564ba3f4943d1658c05, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.56
+      value: -4.28
       objectReference: {fileID: 0}
     - target: {fileID: 4328333242247378, guid: 75065e7468a66564ba3f4943d1658c05, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.22
+      value: 2.9
       objectReference: {fileID: 0}
     - target: {fileID: 4328333242247378, guid: 75065e7468a66564ba3f4943d1658c05, type: 2}
       propertyPath: m_LocalPosition.z
@@ -250,7 +275,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114753945977262574, guid: 75065e7468a66564ba3f4943d1658c05, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 75065e7468a66564ba3f4943d1658c05, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1607933140
@@ -283,7 +309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed7dfc6ce92a0864188a685766498420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  backgrounds: []
+  scrollSpeed: 0
 --- !u!65 &1607933142
 BoxCollider:
   m_ObjectHideFlags: 0
