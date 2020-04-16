@@ -1,5 +1,5 @@
 # GJ-Project-Cookie
-Unity game submission for the VGDC 2018 Panic at the Game Jam! In this game, you play as a kid who stole a cookie from the principal, who chases you down in this infinite runner.
+Unity game submission for VGDC's Panic at the Game Jam 2018! In this game, you play as a kid who stole a cookie from the principal, who chases you down in this infinite runner.
 
 Play it here: https://starbladek.itch.io/project-cookie
 
